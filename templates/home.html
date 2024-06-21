@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}home{% endblock %}
+{% block styles %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'home.css' %}">
+{% endblock %}
+{% block body %}
+{% include 'task_form.html' %}
+  {% if tasks_not_completed %}
+  <div class="row task-section">
+    <div class="col-12">
+      <h5 class="text-dark mb-3">Not Completed Tasks</h5>
+      <div class="row">
+        {% for task in tasks_not_completed %}
+        <div class="col-md-4">
+          <div class="card task-card not-completed">
+            <div class="card-body">
+              <h6 class="card-title text-dark">Task {{ forloop.counter }}</h6>
+              <p class="card-text">{{ task.task }}</p>
+              <a href="{% url 'status_change' task.id %}" class="btn btn-outline-dark btn-sm"><i class="fas fa-check"></i></a>
+              <a href="{% url 'edit_task' task.id %}" class="btn btn-outline-dark btn-sm"><i class="fas fa-pencil-alt"></i></a>
+              <a href="{% url 'delete_task' task.id %}" class="btn btn-outline-dark btn-sm"><i class="fas fa-trash-alt"></i></a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% if tasks_completed %}
+  <div class="row task-section">
+    <div class="col-12">
+      <h5 class="text-dark mb-3">Completed Tasks</h5>
+      <div class="row">
+        {% for task in tasks_completed %}
+        <div class="col-md-4" >
+          <div class="card task-card completed" >
+            <div class="card-body">
+              <h6 class="card-title text-dark">{{ forloop.counter }}</h6>
+              <p class="card-text">{{ task.task }}</p>
+              <a href="{% url 'status_change' task.id %}" class="btn btn-outline-dark btn-sm"><i class="fas fa-times"></i></a>
+              <a href="{% url 'edit_task' task.id %}" class="btn btn-outline-dark btn-sm"><i class="fas fa-pencil-alt"></i></a>
+              <a href="{% url 'delete_task' task.id %}" class="btn btn-outline-dark btn-sm"><i class="fas fa-trash-alt"></i></a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

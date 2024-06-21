@@ -1,0 +1,69 @@
+    /* Custom styles */
+      .centered-card {
+        max-width: 400px;
+        width: 100%;
+        padding: 25px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for the card */
+        margin: auto; /* Center the card horizontally */
+        margin-top: 50px; /* Add top margin for spacing */
+        border-radius: 10px; /* Rounded corners for the card */
+        background-color: #ffffff; /* White background for the card */
+      }
+
+      .card-title {
+        color: #007bff; /* Bootstrap primary color for the card title */
+      }
+  
+      .form-control {
+        border-color: #ced4da; /* Light gray border for form controls */
+      }
+  
+      .form-control:focus {
+        border-color: #007bff; /* Focus color for form controls */
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Focus shadow for form controls */
+      }
+  
+      .btn-submit {
+        background-color: #007bff;
+        border-color: #007bff;
+        color: #ffffff; /* White text color for the button */
+        transition: background-color 0.3s ease; /* Smooth transition for background color */
+      }
+  
+      .btn-submit:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+      }
+
+      .task-card {
+        margin-bottom: 20px;
+        border: 1px solid #dee2e6;
+        border-radius: 0.25rem;
+      }
+      .task-card.completed {
+        background-color: #d4edda;
+      }
+      .task-card.not-completed {
+        background-color: #f8d7da;
+      }
+      .task-card .btn {
+        float: right;
+        margin-left: 5px;
+      }
+      .task-section {
+        margin-bottom: 40px;
+      }
+      .task-section h5 {
+        border-bottom: 2px solid #343a40;
+        padding-bottom: 10px;
+      }
+      
+      /* Style to make all FontAwesome icons the same color */
+      .task-card .btn i {
+        color: inherit; /* Set icons to inherit color */
+      }
+      
+      /* Hover effect for buttons */
+      .task-card .btn:hover {
+        opacity: 0.8; /* Adjust opacity on hover for visual feedback */
+      }

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} edit task {% endblock %}
+{% block styles %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'edit_task.css' %}">
+{% endblock %}
+{% block body %}
+<a href="{% url 'home' %}" class="btn m-2 btn-secondary">
+    <i class="fas fa-arrow-left"></i> Back
+</a>
+{% include 'task_form.html' %}
+{% endblock %}
